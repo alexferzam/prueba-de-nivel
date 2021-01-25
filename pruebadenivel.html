@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba de nivel</title>
+</head>
+<body>
+    
+<script>
+
+//1) 
+
+    const palindromo = (palabra = "") => {
+        let alReves = palabra.split("").reverse().join("");
+        if (palabra === alReves) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    console.log(palindromo("geeksforgeeks")); // false
+
+/* entiendo que esto se podría refactorizar con un poco de azucar sintáctico mediante operadores ternarios ? :
+
+    const palindromo = (palabra = "") => {
+        let alReves = palabra.split("").reverse().join("");
+        return (palabra === alReves)
+            ? console.log(true)
+            : console.log(false);
+    }
+
+    console.log(palindromo("geeksforgeeks")); // false
+*/
+
+//2)
+
+/*
+
+1. Flexbox solo sirve para "pintar" en 1 dimensión al mismo tiempo, con Grid puedes "pintar" en ambos ejes X e Y.
+2. Flexbox tiene mejor compatibilidad que Grid en cuanto a navegadores (https://caniuse.com/)
+2. La diferenia más importante es que Pedro dijo que usemos Grid, así que Grid.
+
+*/
+
+// 3)
+
+//3.1
+div = document.createElement('div');
+//3.2
+svg = document.createElementNS('https://www.w3.org/2000/svg', 'svg')
+//3.3
+div.classList.add('class1');
+//3.4
+div.style.setProperty('color', 'green');
+//3.5
+div.setAttribute('id','attribute1');
+//3.6
+text = document.createTextNode('hello world');
+div.appendChild(text);
+//3.7
+document.body.appendChild(div);
+div2 = document.createElement('div2');
+div.insertBefore(div2, text);
+//3.8
+let nodeList = div.childNodes;
+console.log(nodeList);
+//3.9
+let elementList = div.children;
+console.log(elementList);
+//3.10
+let allDiv = document.querySelectorAll('div');
+console.log(allDiv);
+//3.11
+let allDivFromClass = div.getElementsByClassName('class1');
+console.log(allDivFromClass); // me sigue saliendo una HMTLcollection vacía
+//3.12
+let divsById = document.getElementById('attribute1');
+console.log(divsById);
+
+</script>
+</body>
+</html>
